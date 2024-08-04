@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Add Student</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name() }}<br>
+            {% for error in form.name.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.matric_number.label }}<br>
+            {{ form.matric_number() }}<br>
+            {% for error in form.matric_number.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.phone_number.label }}<br>
+            {{ form.phone_number() }}<br>
+            {% for error in form.phone_number.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.gender.label }}<br>
+            {{ form.gender() }}<br>
+            {% for error in form.gender.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.level.label }}<br>
+            {{ form.level() }}<br>
+            {% for error in form.level.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
